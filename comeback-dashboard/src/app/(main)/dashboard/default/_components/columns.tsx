@@ -48,6 +48,7 @@ export const dashboardColumns: ColumnDef<z.infer<typeof sectionSchema>>[] = [
   },
   {
     accessorKey: "header",
+    id: "header",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Header" />,
     cell: ({ row }) => {
       return <TableCellViewer item={row.original} />;
@@ -56,6 +57,7 @@ export const dashboardColumns: ColumnDef<z.infer<typeof sectionSchema>>[] = [
   },
   {
     accessorKey: "type",
+    id: "type",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Section Type" />,
     cell: ({ row }) => (
       <div className="w-32">
@@ -68,6 +70,7 @@ export const dashboardColumns: ColumnDef<z.infer<typeof sectionSchema>>[] = [
   },
   {
     accessorKey: "status",
+    id: "status",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Status" />,
     cell: ({ row }) => (
       <Badge variant="outline" className="text-muted-foreground px-1.5">
@@ -83,6 +86,7 @@ export const dashboardColumns: ColumnDef<z.infer<typeof sectionSchema>>[] = [
   },
   {
     accessorKey: "target",
+    id: "target",
     header: ({ column }) => <DataTableColumnHeader className="w-full text-right" column={column} title="Target" />,
     cell: ({ row }) => (
       <form
@@ -109,6 +113,7 @@ export const dashboardColumns: ColumnDef<z.infer<typeof sectionSchema>>[] = [
   },
   {
     accessorKey: "limit",
+    id: "limit",
     header: ({ column }) => <DataTableColumnHeader className="w-full text-right" column={column} title="Limit" />,
     cell: ({ row }) => (
       <form
@@ -135,6 +140,7 @@ export const dashboardColumns: ColumnDef<z.infer<typeof sectionSchema>>[] = [
   },
   {
     accessorKey: "reviewer",
+    id: "reviewer",
     header: ({ column }) => <DataTableColumnHeader column={column} title="Reviewer" />,
     cell: ({ row }) => {
       const isAssigned = row.original.reviewer !== "Assign reviewer";

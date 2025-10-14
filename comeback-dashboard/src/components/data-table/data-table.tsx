@@ -76,8 +76,9 @@ export function DataTable<TData, TValue>({
 
   function handleDragEnd(event: DragEndEvent) {
     const { active, over } = event;
-    if (active && over && active.id !== over.id && onReorder) {
+    if (active.id !== over?.id && onReorder) {
       const oldIndex = dataIds.indexOf(active.id);
+      if (!over) return;
       const newIndex = dataIds.indexOf(over.id);
 
       // Call parent with new data order (parent manages state)

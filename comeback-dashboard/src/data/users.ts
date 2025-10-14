@@ -6,7 +6,7 @@ export const users = [
     email: "chatwithme@edwardwhitehead.dev",
     avatar: "/avatars/edwardwhitehead.png",
     role: "administrator",
-  }
+  },
 ];
 
 export const rootUser = users[0];
