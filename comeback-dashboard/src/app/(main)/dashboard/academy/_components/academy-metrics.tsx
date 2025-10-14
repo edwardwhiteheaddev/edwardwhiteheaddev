@@ -1,7 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Progress } from "@/components/ui/progress";
 import { GraduationCap, Trophy, Target, Calendar } from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
 
 const metricsCards = [
   {
@@ -44,18 +45,15 @@ export function AcademyMetrics() {
       {metricsCards.map((metric, index) => {
         const Icon = metric.icon;
         return (
-          <Card key={index}>
+          <Card key={metric.title}>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">{metric.title}</CardTitle>
-              <Icon className="h-4 w-4 text-muted-foreground" />
+              <Icon className="text-muted-foreground h-4 w-4" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{metric.value}</div>
-              <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-                <Badge
-                  variant={metric.change.startsWith('+') ? "default" : "destructive"}
-                  className="text-xs"
-                >
+              <div className="text-muted-foreground flex items-center space-x-2 text-xs">
+                <Badge variant={metric.change.startsWith("+") ? "default" : "destructive"} className="text-xs">
                   {metric.change}
                 </Badge>
                 <span>from last month</span>
