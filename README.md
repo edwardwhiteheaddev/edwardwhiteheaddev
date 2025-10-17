@@ -1,6 +1,6 @@
 ![Edward Whitehead Dev Works](https://github.com/edwardwhiteheaddev/edwardwhitehead.github.io/blob/main/public/assets/images/og-image.png?raw=true "Edward Whitehead Dev Works")
 
-# 👋 Hi, I'm Edward Whitehead — `@edwardwhiteheaddev`
+# 👋 Hi, I'm Edward Whitehead
 
 > 🚀 Software Engineer · 🧠 AI Architect · 🏗️ SaaS Builder · 🌍 Digital Nomad
 
