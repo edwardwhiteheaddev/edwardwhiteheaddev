@@ -17,6 +17,34 @@ I build future-focused, open-source projects that blend **AI**, **automation**, 
 | DevOps & Infra       | Docker · GitHub Actions · Firebase Hosting · Vercel · Terraform                                        |
 | Mobile & IoT         | React Native · Flutter · .NET MAUI · MQTT · Zigbee/Z-Wave · Robotics Integration                        |
 
+### 🚀 Some Tools I Have Used and Learned
+<p align="left">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="vscode" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/androidstudio/androidstudio-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azuredevops/azuredevops-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="bash" width="25" height="25"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="bash" width="25" height="25"/> 
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="bash" width="25" height="25"/> 
+</p>
+
+***The have used dozens of tools and technologies over the course of my career.***
+
 ---
 
 ## 🧠 Flagship Projects
