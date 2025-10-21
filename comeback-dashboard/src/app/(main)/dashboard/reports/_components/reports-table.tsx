@@ -1,17 +1,11 @@
 "use client";
 
+import { ArrowUpDown, Download, Eye } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { ArrowUpDown, Eye, Download } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const reports = [
   {
@@ -61,9 +55,7 @@ export function ReportsTable() {
     <Card>
       <CardHeader>
         <CardTitle>Generated Reports</CardTitle>
-        <CardDescription>
-          View and download your generated reports
-        </CardDescription>
+        <CardDescription>View and download your generated reports</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
@@ -111,7 +103,7 @@ export function ReportsTable() {
           <TableBody>
             {reports.map((report) => (
               <TableRow key={report.id}>
-                <TableCell className="font-medium font-mono">{report.id}</TableCell>
+                <TableCell className="font-mono font-medium">{report.id}</TableCell>
                 <TableCell className="font-medium">{report.name}</TableCell>
                 <TableCell>
                   <Badge variant="outline">{report.type}</Badge>
@@ -120,11 +112,7 @@ export function ReportsTable() {
                 <TableCell>
                   <Badge
                     variant={
-                      report.status === "Ready"
-                        ? "default"
-                        : report.status === "Processing"
-                        ? "secondary"
-                        : "outline"
+                      report.status === "Ready" ? "default" : report.status === "Processing" ? "secondary" : "outline"
                     }
                   >
                     {report.status}

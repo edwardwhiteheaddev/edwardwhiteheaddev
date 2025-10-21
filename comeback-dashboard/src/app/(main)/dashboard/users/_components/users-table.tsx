@@ -1,18 +1,12 @@
 "use client";
 
+import { ArrowUpDown, Edit, MoreVertical, Trash2 } from "lucide-react";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { ArrowUpDown, MoreVertical, Edit, Trash2 } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const users = [
   {
@@ -67,9 +61,7 @@ export function UsersTable() {
     <Card>
       <CardHeader>
         <CardTitle>Users</CardTitle>
-        <CardDescription>
-          Manage user accounts and permissions
-        </CardDescription>
+        <CardDescription>Manage user accounts and permissions</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
@@ -116,7 +108,10 @@ export function UsersTable() {
                     <Avatar className="h-8 w-8">
                       <AvatarImage src={user.avatar} />
                       <AvatarFallback>
-                        {user.name.split(" ").map(n => n[0]).join("")}
+                        {user.name
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
                       </AvatarFallback>
                     </Avatar>
                     <span className="font-medium">{user.name}</span>
@@ -124,14 +119,10 @@ export function UsersTable() {
                 </TableCell>
                 <TableCell>{user.email}</TableCell>
                 <TableCell>
-                  <Badge variant={user.role === "Admin" ? "default" : "secondary"}>
-                    {user.role}
-                  </Badge>
+                  <Badge variant={user.role === "Admin" ? "default" : "secondary"}>{user.role}</Badge>
                 </TableCell>
                 <TableCell>
-                  <Badge variant={user.status === "Active" ? "default" : "secondary"}>
-                    {user.status}
-                  </Badge>
+                  <Badge variant={user.status === "Active" ? "default" : "secondary"}>{user.status}</Badge>
                 </TableCell>
                 <TableCell>{user.lastLogin}</TableCell>
                 <TableCell className="text-right">

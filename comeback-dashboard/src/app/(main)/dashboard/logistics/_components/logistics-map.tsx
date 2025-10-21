@@ -1,9 +1,10 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { MapPin, Navigation } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MapPin, Navigation, Truck } from "lucide-react";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const deliveryPoints = [
   {
@@ -48,21 +49,17 @@ export function LogisticsMap() {
     <Card>
       <CardHeader>
         <CardTitle>Delivery Network Map</CardTitle>
-        <CardDescription>
-          Real-time view of delivery points and routes
-        </CardDescription>
+        <CardDescription>Real-time view of delivery points and routes</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
           {/* Map Visualization Area */}
-          <div className="relative h-[300px] w-full rounded-lg border bg-muted/10">
+          <div className="bg-muted/10 relative h-[300px] w-full rounded-lg border">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center">
-                <Navigation className="mx-auto h-12 w-12 text-muted-foreground" />
-                <p className="mt-2 text-sm text-muted-foreground">Interactive Map View</p>
-                <p className="text-xs text-muted-foreground">
-                  (Map integration would go here)
-                </p>
+                <Navigation className="text-muted-foreground mx-auto h-12 w-12" />
+                <p className="text-muted-foreground mt-2 text-sm">Interactive Map View</p>
+                <p className="text-muted-foreground text-xs">(Map integration would go here)</p>
               </div>
             </div>
 
@@ -70,7 +67,7 @@ export function LogisticsMap() {
             {deliveryPoints.map((point) => (
               <div
                 key={point.id}
-                className="absolute transform -translate-x-1/2 -translate-y-1/2"
+                className="absolute -translate-x-1/2 -translate-y-1/2 transform"
                 style={{
                   left: `${point.coordinates.x}%`,
                   top: `${point.coordinates.y}%`,
@@ -82,20 +79,16 @@ export function LogisticsMap() {
                       point.status === "Active"
                         ? "text-green-500"
                         : point.status === "Loading"
-                        ? "text-blue-500"
-                        : point.status === "Maintenance"
-                        ? "text-red-500"
-                        : "text-gray-500"
+                          ? "text-blue-500"
+                          : point.status === "Maintenance"
+                            ? "text-red-500"
+                            : "text-gray-500"
                     }`}
                   />
-                  <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap">
+                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 transform whitespace-nowrap">
                     <Badge
                       variant={
-                        point.status === "Active"
-                          ? "default"
-                          : point.status === "Loading"
-                          ? "secondary"
-                          : "destructive"
+                        point.status === "Active" ? "default" : point.status === "Loading" ? "secondary" : "destructive"
                       }
                       className="text-xs"
                     >
@@ -114,27 +107,21 @@ export function LogisticsMap() {
               {deliveryPoints.map((point) => (
                 <div key={point.id} className="flex items-center justify-between rounded-lg border p-3">
                   <div className="flex items-center space-x-3">
-                    <MapPin className="h-4 w-4 text-muted-foreground" />
+                    <MapPin className="text-muted-foreground h-4 w-4" />
                     <div>
                       <p className="text-sm font-medium">{point.location}</p>
-                      <p className="text-xs text-muted-foreground">{point.id}</p>
+                      <p className="text-muted-foreground text-xs">{point.id}</p>
                     </div>
                   </div>
                   <div className="flex items-center space-x-2">
                     <Badge
                       variant={
-                        point.status === "Active"
-                          ? "default"
-                          : point.status === "Loading"
-                          ? "secondary"
-                          : "destructive"
+                        point.status === "Active" ? "default" : point.status === "Loading" ? "secondary" : "destructive"
                       }
                     >
                       {point.status}
                     </Badge>
-                    <span className="text-sm text-muted-foreground">
-                      {point.deliveries} deliveries
-                    </span>
+                    <span className="text-muted-foreground text-sm">{point.deliveries} deliveries</span>
                   </div>
                 </div>
               ))}

@@ -1,15 +1,13 @@
+import { Plus, Settings } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Plus, Shield, Users, Settings } from "lucide-react";
 
 export function RolesHeader() {
   return (
     <div className="flex items-center justify-between">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Role Management</h1>
-        <p className="text-muted-foreground">
-          Define roles and manage permissions
-        </p>
+        <p className="text-muted-foreground">Define roles and manage permissions</p>
       </div>
 
       <div className="flex items-center space-x-2">

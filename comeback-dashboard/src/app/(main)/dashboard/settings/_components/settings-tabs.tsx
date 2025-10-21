@@ -1,12 +1,12 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Switch } from "@/components/ui/switch";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Switch } from "@/components/ui/switch";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export function SettingsTabs() {
   return (
@@ -22,9 +22,7 @@ export function SettingsTabs() {
         <Card>
           <CardHeader>
             <CardTitle>Application Settings</CardTitle>
-            <CardDescription>
-              Configure general application preferences
-            </CardDescription>
+            <CardDescription>Configure general application preferences</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="grid gap-4 md:grid-cols-2">
@@ -52,9 +50,7 @@ export function SettingsTabs() {
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label>Dark Mode</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Enable dark theme for the interface
-                  </p>
+                  <p className="text-muted-foreground text-sm">Enable dark theme for the interface</p>
                 </div>
                 <Switch />
               </div>
@@ -62,9 +58,7 @@ export function SettingsTabs() {
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label>Email Notifications</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Receive email updates about your account
-                  </p>
+                  <p className="text-muted-foreground text-sm">Receive email updates about your account</p>
                 </div>
                 <Switch defaultChecked />
               </div>
@@ -77,18 +71,14 @@ export function SettingsTabs() {
         <Card>
           <CardHeader>
             <CardTitle>Notification Preferences</CardTitle>
-            <CardDescription>
-              Choose what notifications you want to receive
-            </CardDescription>
+            <CardDescription>Choose what notifications you want to receive</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label>Push Notifications</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Receive push notifications in your browser
-                  </p>
+                  <p className="text-muted-foreground text-sm">Receive push notifications in your browser</p>
                 </div>
                 <Switch defaultChecked />
               </div>
@@ -96,9 +86,7 @@ export function SettingsTabs() {
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label>Weekly Reports</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Get weekly summary reports via email
-                  </p>
+                  <p className="text-muted-foreground text-sm">Get weekly summary reports via email</p>
                 </div>
                 <Switch />
               </div>
@@ -106,9 +94,7 @@ export function SettingsTabs() {
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label>Security Alerts</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Immediate notifications for security events
-                  </p>
+                  <p className="text-muted-foreground text-sm">Immediate notifications for security events</p>
                 </div>
                 <Switch defaultChecked />
               </div>
@@ -121,9 +107,7 @@ export function SettingsTabs() {
         <Card>
           <CardHeader>
             <CardTitle>Security Settings</CardTitle>
-            <CardDescription>
-              Manage your account security preferences
-            </CardDescription>
+            <CardDescription>Manage your account security preferences</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="space-y-4">
@@ -146,9 +130,7 @@ export function SettingsTabs() {
             <div className="flex items-center justify-between">
               <div className="space-y-0.5">
                 <Label>Two-Factor Authentication</Label>
-                <p className="text-sm text-muted-foreground">
-                  Add an extra layer of security to your account
-                </p>
+                <p className="text-muted-foreground text-sm">Add an extra layer of security to your account</p>
               </div>
               <Switch />
             </div>
@@ -162,18 +144,14 @@ export function SettingsTabs() {
         <Card>
           <CardHeader>
             <CardTitle>Third-party Integrations</CardTitle>
-            <CardDescription>
-              Connect with external services and APIs
-            </CardDescription>
+            <CardDescription>Connect with external services and APIs</CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label>Slack Integration</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Send notifications to your Slack workspace
-                  </p>
+                  <p className="text-muted-foreground text-sm">Send notifications to your Slack workspace</p>
                 </div>
                 <Switch />
               </div>
@@ -181,9 +159,7 @@ export function SettingsTabs() {
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label>Google Analytics</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Track website analytics and user behavior
-                  </p>
+                  <p className="text-muted-foreground text-sm">Track website analytics and user behavior</p>
                 </div>
                 <Switch defaultChecked />
               </div>
@@ -191,9 +167,7 @@ export function SettingsTabs() {
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
                   <Label>Stripe Payments</Label>
-                  <p className="text-sm text-muted-foreground">
-                    Process payments and manage subscriptions
-                  </p>
+                  <p className="text-muted-foreground text-sm">Process payments and manage subscriptions</p>
                 </div>
                 <Switch defaultChecked />
               </div>

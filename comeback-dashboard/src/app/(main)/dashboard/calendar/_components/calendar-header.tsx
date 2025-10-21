@@ -1,6 +1,7 @@
-import { Button } from "@/components/ui/button";
+import { Calendar, ChevronLeft, ChevronRight, Grid3X3, List, Plus } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
-import { ChevronLeft, ChevronRight, Plus, Calendar, List, Grid3X3 } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export function CalendarHeader() {
   return (
@@ -24,7 +25,7 @@ export function CalendarHeader() {
           <ChevronRight className="h-4 w-4" />
         </Button>
 
-        <div className="h-6 w-px bg-border mx-2" />
+        <div className="bg-border mx-2 h-6 w-px" />
 
         <Button variant="outline" size="sm">
           <Calendar className="mr-2 h-4 w-4" />

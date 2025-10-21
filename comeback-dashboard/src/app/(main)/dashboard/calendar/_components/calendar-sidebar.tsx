@@ -1,9 +1,10 @@
 "use client";
 
+import { Clock, MapPin, Users } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Clock, MapPin, Users } from "lucide-react";
 
 const upcomingEvents = [
   {
@@ -43,8 +44,8 @@ const upcomingEvents = [
 export function CalendarSidebar() {
   return (
     <div className="flex h-full flex-col border-r">
-      <div className="p-4 border-b">
-        <h3 className="font-semibold mb-4">Upcoming Events</h3>
+      <div className="border-b p-4">
+        <h3 className="mb-4 font-semibold">Upcoming Events</h3>
         <Button className="w-full" size="sm">
           <Clock className="mr-2 h-4 w-4" />
           Schedule Event
@@ -52,26 +53,20 @@ export function CalendarSidebar() {
       </div>
 
       <ScrollArea className="flex-1">
-        <div className="p-4 space-y-4">
+        <div className="space-y-4 p-4">
           {upcomingEvents.map((event) => (
-            <div key={event.id} className="rounded-lg border p-3 space-y-2">
+            <div key={event.id} className="space-y-2 rounded-lg border p-3">
               <div className="flex items-start justify-between">
-                <h4 className="font-medium text-sm">{event.title}</h4>
+                <h4 className="text-sm font-medium">{event.title}</h4>
                 <Badge
-                  variant={
-                    event.type === "meeting"
-                      ? "default"
-                      : event.type === "task"
-                      ? "secondary"
-                      : "outline"
-                  }
+                  variant={event.type === "meeting" ? "default" : event.type === "task" ? "secondary" : "outline"}
                   className="text-xs"
                 >
                   {event.type}
                 </Badge>
               </div>
 
-              <div className="space-y-1 text-xs text-muted-foreground">
+              <div className="text-muted-foreground space-y-1 text-xs">
                 <div className="flex items-center space-x-2">
                   <Clock className="h-3 w-3" />
                   <span>{event.time}</span>
@@ -90,10 +85,10 @@ export function CalendarSidebar() {
         </div>
       </ScrollArea>
 
-      <div className="p-4 border-t">
-        <div className="text-xs text-muted-foreground space-y-1">
+      <div className="border-t p-4">
+        <div className="text-muted-foreground space-y-1 text-xs">
           <div className="flex justify-between">
-            <span>Today's Events</span>
+            <span>Today&#39;s Events</span>
             <span className="font-medium">12</span>
           </div>
           <div className="flex justify-between">

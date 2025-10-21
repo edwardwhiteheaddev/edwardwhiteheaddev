@@ -2,6 +2,7 @@ import { FlatCompat } from "@eslint/eslintrc";
 import pluginJs from "@eslint/js";
 import pluginImport from "eslint-plugin-import";
 import pluginReact from "eslint-plugin-react";
+import pluginNext from "@next/eslint-plugin-next";
 import globals from "globals";
 import tseslint from "typescript-eslint";
 import securityPlugin from "eslint-plugin-security";
@@ -37,6 +38,7 @@ export default [
       unicorn: unicorn,
       react: pluginReact,
       sonarjs: sonarjs,
+      "@next/next": pluginNext,
     },
   },
   pluginJs.configs.recommended,

@@ -1,7 +1,6 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
@@ -43,26 +42,29 @@ const calendarDays = [
 export function CalendarGrid() {
   return (
     <Card className="h-full">
-      <CardContent className="p-0 h-full">
-        <div className="h-full flex flex-col">
+      <CardContent className="h-full p-0">
+        <div className="flex h-full flex-col">
           {/* Days of week header */}
           <div className="grid grid-cols-7 border-b">
             {daysOfWeek.map((day) => (
-              <div key={day} className="p-3 text-center text-sm font-medium text-muted-foreground border-r last:border-r-0">
+              <div
+                key={day}
+                className="text-muted-foreground border-r p-3 text-center text-sm font-medium last:border-r-0"
+              >
                 {day}
               </div>
             ))}
           </div>
 
           {/* Calendar days */}
-          <div className="flex-1 grid grid-cols-7 auto-rows-fr">
-            {calendarDays.map((day, index) => (
+          <div className="grid flex-1 auto-rows-fr grid-cols-7">
+            {calendarDays.map((day) => (
               <div
-                key={index}
-                className="p-2 border-r border-b min-h-[120px] hover:bg-muted/50 cursor-pointer transition-colors"
+                key={day.day}
+                className="hover:bg-muted/50 min-h-[120px] cursor-pointer border-r border-b p-2 transition-colors"
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className={`text-sm ${day.day === new Date().getDate() ? "font-bold text-primary" : ""}`}>
+                <div className="mb-2 flex items-center justify-between">
+                  <span className={`text-sm ${day.day === new Date().getDate() ? "text-primary font-bold" : ""}`}>
                     {day.day}
                   </span>
                   {day.events > 0 && (
@@ -77,21 +79,17 @@ export function CalendarGrid() {
                     <div className="space-y-1">
                       {Array.from({ length: Math.min(day.events, 3) }).map((_, eventIndex) => (
                         <div
-                          key={eventIndex}
+                          key={`${day.day}-${eventIndex}`}
                           className={`h-2 w-full rounded-full ${
                             day.type === "meeting"
                               ? "bg-blue-500"
                               : day.type === "task"
-                              ? "bg-green-500"
-                              : "bg-orange-500"
+                                ? "bg-green-500"
+                                : "bg-orange-500"
                           }`}
                         />
                       ))}
-                      {day.events > 3 && (
-                        <div className="text-xs text-muted-foreground">
-                          +{day.events - 3} more
-                        </div>
-                      )}
+                      {day.events > 3 && <div className="text-muted-foreground text-xs">+{day.events - 3} more</div>}
                     </div>
                   )}
                 </div>

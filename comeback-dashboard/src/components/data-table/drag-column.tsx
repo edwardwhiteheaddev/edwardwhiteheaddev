@@ -23,9 +23,9 @@ function DragHandle({ id }: { id: number }) {
   );
 }
 
-export const dragColumn: ColumnDef<any> = {
+export const dragColumn: ColumnDef<{ id: number }> = {
   id: "drag",
-  header: () => null,
+  header: "",
   cell: ({ row }) => <DragHandle id={row.original.id} />,
   enableSorting: false,
   enableHiding: false,

@@ -29,24 +29,33 @@ export function LayoutControls(props: LayoutControlsProps) {
   const themePreset = usePreferencesStore((s) => s.themePreset);
   const setThemePreset = usePreferencesStore((s) => s.setThemePreset);
 
-  const handleValueChange = async (key: string, value: any) => {
+  const handleValueChange = async (key: string, value: string) => {
     if (key === "theme_mode") {
-      updateThemeMode(value);
+      updateThemeMode(value as ThemeMode);
       setThemeMode(value as ThemeMode);
     }
 
     if (key === "theme_preset") {
-      updateThemePreset(value);
+      updateThemePreset(value as ThemePreset);
       setThemePreset(value as ThemePreset);
     }
 
     if (key === "content_layout") {
-      updateContentLayout(value);
+      updateContentLayout(value as ContentLayout);
     }
 
     if (key === "navbar_style") {
-      updateNavbarStyle(value);
+      updateNavbarStyle(value as NavbarStyle);
     }
+
+    if (key === "sidebar_variant") {
+      // Handle sidebar variant updates if needed
+    }
+
+    if (key === "sidebar_collapsible") {
+      // Handle sidebar collapsible updates if needed
+    }
+
     await setValueToCookie(key, value);
   };
 

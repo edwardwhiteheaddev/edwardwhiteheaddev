@@ -1,17 +1,11 @@
 "use client";
 
+import { ArrowUpDown } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { ArrowUpDown } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const academyData = [
   {
@@ -61,9 +55,7 @@ export function AcademyTable() {
     <Card>
       <CardHeader>
         <CardTitle>Course Performance</CardTitle>
-        <CardDescription>
-          Course enrollment, completion rates, and student ratings
-        </CardDescription>
+        <CardDescription>Course enrollment, completion rates, and student ratings</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
@@ -108,8 +100,8 @@ export function AcademyTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {academyData.map((row, index) => (
-              <TableRow key={index}>
+            {academyData.map((row) => (
+              <TableRow key={row.course}>
                 <TableCell className="font-medium">{row.course}</TableCell>
                 <TableCell>{row.instructor}</TableCell>
                 <TableCell>{row.students}</TableCell>
@@ -117,13 +109,7 @@ export function AcademyTable() {
                 <TableCell>{row.rating}</TableCell>
                 <TableCell>
                   <Badge
-                    variant={
-                      row.status === "Active"
-                        ? "default"
-                        : row.status === "Draft"
-                        ? "secondary"
-                        : "outline"
-                    }
+                    variant={row.status === "Active" ? "default" : row.status === "Draft" ? "secondary" : "outline"}
                   >
                     {row.status}
                   </Badge>
