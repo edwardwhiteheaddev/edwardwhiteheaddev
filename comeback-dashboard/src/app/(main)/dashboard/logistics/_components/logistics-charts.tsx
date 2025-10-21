@@ -1,8 +1,9 @@
 "use client";
 
+import { Area, AreaChart, Cell, Line, LineChart, Pie, PieChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { Area, AreaChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis, PieChart, Pie, Cell } from "recharts";
 
 const deliveryData = [
   { month: "Jan", delivered: 450, pending: 23, failed: 8 },
@@ -118,8 +119,8 @@ export function LogisticsCharts() {
                     paddingAngle={5}
                     dataKey="value"
                   >
-                    {zoneData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.fill} />
+                    {zoneData.map((entry) => (
+                      <Cell key={`cell-${entry.name}`} fill={entry.fill} />
                     ))}
                   </Pie>
                   <ChartTooltip content={<ChartTooltipContent />} />
@@ -149,12 +150,7 @@ export function LogisticsCharts() {
                   <XAxis dataKey="day" />
                   <YAxis domain={[80, 100]} />
                   <ChartTooltip content={<ChartTooltipContent />} />
-                  <Line
-                    type="monotone"
-                    dataKey="efficiency"
-                    stroke="hsl(var(--chart-1))"
-                    strokeWidth={3}
-                  />
+                  <Line type="monotone" dataKey="efficiency" stroke="hsl(var(--chart-1))" strokeWidth={3} />
                 </LineChart>
               </ResponsiveContainer>
             </ChartContainer>

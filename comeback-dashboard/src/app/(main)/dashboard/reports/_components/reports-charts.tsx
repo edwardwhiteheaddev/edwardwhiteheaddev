@@ -1,8 +1,9 @@
 "use client";
 
+import { Bar, BarChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { Bar, BarChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 const reportData = [
   { month: "Jan", revenue: 45000, users: 1200, orders: 340 },
@@ -51,24 +52,9 @@ export function ReportsCharts() {
                 <XAxis dataKey="month" />
                 <YAxis />
                 <ChartTooltip content={<ChartTooltipContent />} />
-                <Line
-                  type="monotone"
-                  dataKey="revenue"
-                  stroke="hsl(var(--chart-1))"
-                  strokeWidth={2}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="users"
-                  stroke="hsl(var(--chart-2))"
-                  strokeWidth={2}
-                />
-                <Line
-                  type="monotone"
-                  dataKey="orders"
-                  stroke="hsl(var(--chart-3))"
-                  strokeWidth={2}
-                />
+                <Line type="monotone" dataKey="revenue" stroke="hsl(var(--chart-1))" strokeWidth={2} />
+                <Line type="monotone" dataKey="users" stroke="hsl(var(--chart-2))" strokeWidth={2} />
+                <Line type="monotone" dataKey="orders" stroke="hsl(var(--chart-3))" strokeWidth={2} />
               </LineChart>
             </ResponsiveContainer>
           </ChartContainer>

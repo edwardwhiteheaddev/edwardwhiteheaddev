@@ -1,15 +1,13 @@
+import { Calendar, Download, Filter, RefreshCw } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { Calendar, Filter, Download, RefreshCw } from "lucide-react";
 
 export function ActivityHeader() {
   return (
     <div className="flex items-center justify-between">
       <div>
         <h1 className="text-3xl font-bold tracking-tight">Activity Log</h1>
-        <p className="text-muted-foreground">
-          Track user actions and system events
-        </p>
+        <p className="text-muted-foreground">Track user actions and system events</p>
       </div>
 
       <div className="flex items-center space-x-2">

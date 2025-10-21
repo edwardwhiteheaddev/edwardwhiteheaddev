@@ -41,7 +41,7 @@ const overviewCards = [
 export function AcademyOverview() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      {overviewCards.map((card, index) => {
+      {overviewCards.map((card) => {
         const Icon = card.icon;
         return (
           <Card key={card.title}>
@@ -52,7 +52,10 @@ export function AcademyOverview() {
             <CardContent>
               <div className="text-2xl font-bold">{card.value}</div>
               <div className="text-muted-foreground flex items-center space-x-2 text-xs">
-                <Badge variant={card.trend === "up" ? "default" : "destructive"} className="flex items-center space-x-1">
+                <Badge
+                  variant={card.trend === "up" ? "default" : "destructive"}
+                  className="flex items-center space-x-1"
+                >
                   {card.trend === "up" ? <TrendingUp className="h-3 w-3" /> : <TrendingDown className="h-3 w-3" />}
                   <span>{card.change}</span>
                 </Badge>

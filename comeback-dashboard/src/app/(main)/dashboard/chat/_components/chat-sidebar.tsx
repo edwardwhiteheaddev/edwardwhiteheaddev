@@ -1,10 +1,11 @@
 "use client";
 
+import { Hash, MessageCircle, Users } from "lucide-react";
+
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { MessageCircle, Users, Hash } from "lucide-react";
 
 const conversations = [
   {
@@ -62,8 +63,8 @@ const conversations = [
 export function ChatSidebar() {
   return (
     <div className="flex h-full flex-col border-r">
-      <div className="p-4 border-b">
-        <div className="flex items-center justify-between mb-4">
+      <div className="border-b p-4">
+        <div className="mb-4 flex items-center justify-between">
           <h3 className="font-semibold">Conversations</h3>
           <Badge variant="secondary">{conversations.length}</Badge>
         </div>
@@ -85,36 +86,33 @@ export function ChatSidebar() {
       </div>
 
       <ScrollArea className="flex-1">
-        <div className="p-2 space-y-2">
+        <div className="space-y-2 p-2">
           {conversations.map((conversation) => (
             <div
               key={conversation.id}
-              className="flex items-center space-x-3 rounded-lg p-3 hover:bg-muted cursor-pointer"
+              className="hover:bg-muted flex cursor-pointer items-center space-x-3 rounded-lg p-3"
             >
               <div className="relative">
                 <Avatar className="h-10 w-10">
                   <AvatarImage src={conversation.avatar} />
                   <AvatarFallback>
-                    {conversation.name.split(" ").map(n => n[0]).join("")}
+                    {conversation.name
+                      .split(" ")
+                      .map((n) => n[0])
+                      .join("")}
                   </AvatarFallback>
                 </Avatar>
                 {conversation.online && (
-                  <div className="absolute -bottom-1 -right-1 h-3 w-3 rounded-full bg-green-500 border-2 border-background" />
+                  <div className="border-background absolute -right-1 -bottom-1 h-3 w-3 rounded-full border-2 bg-green-500" />
                 )}
               </div>
 
-              <div className="flex-1 min-w-0">
+              <div className="min-w-0 flex-1">
                 <div className="flex items-center justify-between">
-                  <p className="text-sm font-medium truncate">
-                    {conversation.name}
-                  </p>
-                  <span className="text-xs text-muted-foreground">
-                    {conversation.time}
-                  </span>
+                  <p className="truncate text-sm font-medium">{conversation.name}</p>
+                  <span className="text-muted-foreground text-xs">{conversation.time}</span>
                 </div>
-                <p className="text-xs text-muted-foreground truncate">
-                  {conversation.lastMessage}
-                </p>
+                <p className="text-muted-foreground truncate text-xs">{conversation.lastMessage}</p>
               </div>
 
               {conversation.unread > 0 && (

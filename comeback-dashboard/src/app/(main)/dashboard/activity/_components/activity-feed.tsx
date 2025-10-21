@@ -1,10 +1,11 @@
 "use client";
 
+import { Database, FileText, Settings, Shield, User } from "lucide-react";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { User, Settings, FileText, Shield, Database } from "lucide-react";
 
 const activities = [
   {
@@ -94,9 +95,7 @@ export function ActivityFeed() {
     <Card className="h-[600px]">
       <CardHeader>
         <CardTitle>Recent Activity</CardTitle>
-        <CardDescription>
-          Latest actions and system events
-        </CardDescription>
+        <CardDescription>Latest actions and system events</CardDescription>
       </CardHeader>
       <CardContent className="p-0">
         <ScrollArea className="h-[500px]">
@@ -109,11 +108,14 @@ export function ActivityFeed() {
                     <Avatar className="h-10 w-10">
                       <AvatarImage src={activity.avatar} />
                       <AvatarFallback>
-                        {activity.user.split(" ").map(n => n[0]).join("")}
+                        {activity.user
+                          .split(" ")
+                          .map((n) => n[0])
+                          .join("")}
                       </AvatarFallback>
                     </Avatar>
-                    <div className="absolute -bottom-1 -right-1">
-                      <div className="h-6 w-6 rounded-full bg-background border-2 border-border flex items-center justify-center">
+                    <div className="absolute -right-1 -bottom-1">
+                      <div className="bg-background border-border flex h-6 w-6 items-center justify-center rounded-full border-2">
                         <Icon className="h-3 w-3" />
                       </div>
                     </div>
@@ -127,10 +129,10 @@ export function ActivityFeed() {
                           activity.type === "user"
                             ? "default"
                             : activity.type === "system"
-                            ? "secondary"
-                            : activity.type === "security"
-                            ? "destructive"
-                            : "outline"
+                              ? "secondary"
+                              : activity.type === "security"
+                                ? "destructive"
+                                : "outline"
                         }
                         className="text-xs"
                       >
@@ -138,16 +140,11 @@ export function ActivityFeed() {
                       </Badge>
                     </div>
 
-                    <p className="text-sm text-muted-foreground">
-                      {activity.action}{" "}
-                      <span className="font-medium text-foreground">
-                        {activity.target}
-                      </span>
+                    <p className="text-muted-foreground text-sm">
+                      {activity.action} <span className="text-foreground font-medium">{activity.target}</span>
                     </p>
 
-                    <p className="text-xs text-muted-foreground">
-                      {activity.time}
-                    </p>
+                    <p className="text-muted-foreground text-xs">{activity.time}</p>
                   </div>
                 </div>
               );

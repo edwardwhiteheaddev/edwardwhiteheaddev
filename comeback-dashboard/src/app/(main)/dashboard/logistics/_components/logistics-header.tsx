@@ -1,6 +1,7 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Clock, MapPin, Package, TrendingDown, TrendingUp, Truck } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
-import { TrendingUp, TrendingDown, Truck, Package, MapPin, Clock } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
 const headerStats = [
   {
@@ -44,23 +45,20 @@ export function LogisticsHeader() {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {headerStats.map((stat, index) => {
+        {headerStats.map((stat) => {
           const Icon = stat.icon;
           return (
-            <Card key={index}>
+            <Card key={stat.title}>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
-                    <p className="text-sm font-medium text-muted-foreground">{stat.title}</p>
+                    <p className="text-muted-foreground text-sm font-medium">{stat.title}</p>
                     <p className="text-2xl font-bold">{stat.value}</p>
                   </div>
-                  <Icon className="h-8 w-8 text-muted-foreground" />
+                  <Icon className="text-muted-foreground h-8 w-8" />
                 </div>
                 <div className="mt-4 flex items-center space-x-2">
-                  <Badge
-                    variant={stat.trend === "up" ? "default" : "destructive"}
-                    className="text-xs"
-                  >
+                  <Badge variant={stat.trend === "up" ? "default" : "destructive"} className="text-xs">
                     {stat.trend === "up" ? (
                       <TrendingUp className="mr-1 h-3 w-3" />
                     ) : (
@@ -68,7 +66,7 @@ export function LogisticsHeader() {
                     )}
                     {stat.change}
                   </Badge>
-                  <span className="text-xs text-muted-foreground">vs last month</span>
+                  <span className="text-muted-foreground text-xs">vs last month</span>
                 </div>
               </CardContent>
             </Card>

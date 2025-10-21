@@ -1,9 +1,10 @@
 "use client";
 
+import { Edit, Eye, Settings, Shield, Trash2, Users } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Shield, Users, Settings, Edit, Trash2, Eye } from "lucide-react";
 
 const roles = [
   {
@@ -68,11 +69,11 @@ export function RolesGrid() {
       {roles.map((role) => {
         const Icon = role.icon;
         return (
-          <Card key={role.id} className={`${role.color} hover:shadow-md transition-shadow`}>
+          <Card key={role.id} className={`${role.color} transition-shadow hover:shadow-md`}>
             <CardHeader>
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
-                  <div className="p-2 rounded-lg bg-background">
+                  <div className="bg-background rounded-lg p-2">
                     <Icon className="h-6 w-6" />
                   </div>
                   <div>
@@ -85,7 +86,7 @@ export function RolesGrid() {
             </CardHeader>
             <CardContent className="space-y-4">
               <div>
-                <h4 className="text-sm font-medium mb-2">Permissions</h4>
+                <h4 className="mb-2 text-sm font-medium">Permissions</h4>
                 <div className="flex flex-wrap gap-1">
                   {role.permissions.map((permission) => (
                     <Badge key={permission} variant="outline" className="text-xs">
@@ -95,10 +96,8 @@ export function RolesGrid() {
                 </div>
               </div>
 
-              <div className="flex justify-between items-center pt-4 border-t">
-                <div className="text-sm text-muted-foreground">
-                  {role.users} users assigned
-                </div>
+              <div className="flex items-center justify-between border-t pt-4">
+                <div className="text-muted-foreground text-sm">{role.users} users assigned</div>
                 <div className="flex space-x-2">
                   <Button variant="ghost" size="sm">
                     <Edit className="h-4 w-4" />

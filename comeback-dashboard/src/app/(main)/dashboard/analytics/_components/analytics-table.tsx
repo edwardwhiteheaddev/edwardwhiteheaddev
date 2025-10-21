@@ -1,17 +1,11 @@
 "use client";
 
+import { ArrowUpDown } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { ArrowUpDown } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const analyticsData = [
   {
@@ -108,8 +102,8 @@ export function AnalyticsTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {analyticsData.map((row, index) => (
-              <TableRow key={index}>
+            {analyticsData.map((row) => (
+              <TableRow key={row.page}>
                 <TableCell className="font-medium">{row.page}</TableCell>
                 <TableCell>{row.views}</TableCell>
                 <TableCell>{row.uniqueViews}</TableCell>
@@ -119,8 +113,8 @@ export function AnalyticsTable() {
                       parseFloat(row.bounceRate) < 30
                         ? "default"
                         : parseFloat(row.bounceRate) < 40
-                        ? "secondary"
-                        : "destructive"
+                          ? "secondary"
+                          : "destructive"
                     }
                   >
                     {row.bounceRate}

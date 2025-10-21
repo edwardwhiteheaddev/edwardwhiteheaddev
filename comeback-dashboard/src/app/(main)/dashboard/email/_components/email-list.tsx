@@ -1,10 +1,11 @@
 "use client";
 
+import { Archive, Mail, MoreVertical, Star, Trash2 } from "lucide-react";
+
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Mail, Star, Archive, Trash2, MoreVertical } from "lucide-react";
 
 const emailList = [
   {
@@ -69,41 +70,34 @@ export function EmailList() {
     <Card>
       <CardHeader>
         <CardTitle>Recent Emails</CardTitle>
-        <CardDescription>
-          Latest messages in your inbox
-        </CardDescription>
+        <CardDescription>Latest messages in your inbox</CardDescription>
       </CardHeader>
       <CardContent>
         <div className="space-y-4">
           {emailList.map((email) => (
             <div
               key={email.id}
-              className={`flex items-center space-x-4 rounded-lg border p-4 transition-colors hover:bg-muted/50 ${
+              className={`hover:bg-muted/50 flex items-center space-x-4 rounded-lg border p-4 transition-colors ${
                 email.unread ? "bg-muted/20" : ""
               }`}
             >
               <Avatar className="h-10 w-10">
                 <AvatarFallback>
-                  {email.sender.split(" ").map(n => n[0]).join("")}
+                  {email.sender
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
                 </AvatarFallback>
               </Avatar>
 
               <div className="flex-1 space-y-1">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <p className={`text-sm font-medium ${email.unread ? "font-semibold" : ""}`}>
-                      {email.sender}
-                    </p>
-                    {email.starred && (
-                      <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                    )}
+                    <p className={`text-sm font-medium ${email.unread ? "font-semibold" : ""}`}>{email.sender}</p>
+                    {email.starred && <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />}
                     <Badge
                       variant={
-                        email.priority === "high"
-                          ? "destructive"
-                          : email.priority === "low"
-                          ? "secondary"
-                          : "outline"
+                        email.priority === "high" ? "destructive" : email.priority === "low" ? "secondary" : "outline"
                       }
                       className="text-xs"
                     >
@@ -111,7 +105,7 @@ export function EmailList() {
                     </Badge>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <span className="text-xs text-muted-foreground">{email.time}</span>
+                    <span className="text-muted-foreground text-xs">{email.time}</span>
                     <Button variant="ghost" size="sm">
                       <MoreVertical className="h-4 w-4" />
                     </Button>
@@ -119,12 +113,8 @@ export function EmailList() {
                 </div>
 
                 <div className="space-y-1">
-                  <p className={`text-sm ${email.unread ? "font-semibold" : ""}`}>
-                    {email.subject}
-                  </p>
-                  <p className="text-xs text-muted-foreground line-clamp-1">
-                    {email.preview}
-                  </p>
+                  <p className={`text-sm ${email.unread ? "font-semibold" : ""}`}>{email.subject}</p>
+                  <p className="text-muted-foreground line-clamp-1 text-xs">{email.preview}</p>
                 </div>
               </div>
 

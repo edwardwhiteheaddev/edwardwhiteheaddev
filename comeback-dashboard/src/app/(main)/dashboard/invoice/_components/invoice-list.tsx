@@ -1,17 +1,11 @@
 "use client";
 
+import { ArrowUpDown, Download, Eye, MoreVertical, Send } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { ArrowUpDown, Eye, Download, Send, MoreVertical } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const invoices = [
   {
@@ -61,9 +55,7 @@ export function InvoiceList() {
     <Card>
       <CardHeader>
         <CardTitle>Recent Invoices</CardTitle>
-        <CardDescription>
-          Manage your invoices and payment status
-        </CardDescription>
+        <CardDescription>Manage your invoices and payment status</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
@@ -111,17 +103,13 @@ export function InvoiceList() {
           <TableBody>
             {invoices.map((invoice) => (
               <TableRow key={invoice.id}>
-                <TableCell className="font-medium font-mono">{invoice.id}</TableCell>
+                <TableCell className="font-mono font-medium">{invoice.id}</TableCell>
                 <TableCell>{invoice.client}</TableCell>
                 <TableCell className="font-medium">{invoice.amount}</TableCell>
                 <TableCell>
                   <Badge
                     variant={
-                      invoice.status === "Paid"
-                        ? "default"
-                        : invoice.status === "Pending"
-                        ? "secondary"
-                        : "destructive"
+                      invoice.status === "Paid" ? "default" : invoice.status === "Pending" ? "secondary" : "destructive"
                     }
                   >
                     {invoice.status}

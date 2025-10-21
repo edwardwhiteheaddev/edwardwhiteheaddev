@@ -100,7 +100,7 @@ export function AcademyTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {academyData.map((row, index) => (
+            {academyData.map((row) => (
               <TableRow key={row.course}>
                 <TableCell className="font-medium">{row.course}</TableCell>
                 <TableCell>{row.instructor}</TableCell>
@@ -108,7 +108,9 @@ export function AcademyTable() {
                 <TableCell>{row.completion}</TableCell>
                 <TableCell>{row.rating}</TableCell>
                 <TableCell>
-                  <Badge variant={row.status === "Active" ? "default" : row.status === "Draft" ? "secondary" : "outline"}>
+                  <Badge
+                    variant={row.status === "Active" ? "default" : row.status === "Draft" ? "secondary" : "outline"}
+                  >
                     {row.status}
                   </Badge>
                 </TableCell>

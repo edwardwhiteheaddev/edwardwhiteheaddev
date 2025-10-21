@@ -1,18 +1,12 @@
 "use client";
 
+import { ArrowUpDown, MapPin, Truck } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { ArrowUpDown, MapPin, Truck } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const logisticsData = [
   {
@@ -67,9 +61,7 @@ export function LogisticsTable() {
     <Card>
       <CardHeader>
         <CardTitle>Active Deliveries</CardTitle>
-        <CardDescription>
-          Real-time tracking of current delivery operations
-        </CardDescription>
+        <CardDescription>Real-time tracking of current delivery operations</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
@@ -120,16 +112,16 @@ export function LogisticsTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {logisticsData.map((row, index) => (
-              <TableRow key={index}>
-                <TableCell className="font-medium font-mono">{row.id}</TableCell>
+            {logisticsData.map((row) => (
+              <TableRow key={row.id}>
+                <TableCell className="font-mono font-medium">{row.id}</TableCell>
                 <TableCell className="flex items-center space-x-2">
-                  <MapPin className="h-4 w-4 text-muted-foreground" />
+                  <MapPin className="text-muted-foreground h-4 w-4" />
                   <span>{row.route}</span>
                 </TableCell>
                 <TableCell>{row.driver}</TableCell>
                 <TableCell className="flex items-center space-x-2">
-                  <Truck className="h-4 w-4 text-muted-foreground" />
+                  <Truck className="text-muted-foreground h-4 w-4" />
                   <span>{row.vehicle}</span>
                 </TableCell>
                 <TableCell>
@@ -138,10 +130,10 @@ export function LogisticsTable() {
                       row.status === "Delivered"
                         ? "default"
                         : row.status === "In Transit"
-                        ? "secondary"
-                        : row.status === "Loading"
-                        ? "outline"
-                        : "destructive"
+                          ? "secondary"
+                          : row.status === "Loading"
+                            ? "outline"
+                            : "destructive"
                     }
                   >
                     {row.status}
@@ -151,7 +143,7 @@ export function LogisticsTable() {
                 <TableCell>
                   <div className="flex items-center space-x-2">
                     <Progress value={row.progress} className="h-2 flex-1" />
-                    <span className="text-sm text-muted-foreground w-10">{row.progress}%</span>
+                    <span className="text-muted-foreground w-10 text-sm">{row.progress}%</span>
                   </div>
                 </TableCell>
               </TableRow>

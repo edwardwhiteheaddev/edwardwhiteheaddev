@@ -1,8 +1,9 @@
 "use client";
 
+import { Area, AreaChart, Bar, BarChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
-import { Area, AreaChart, Bar, BarChart, Line, LineChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 
 const salesData = [
   { month: "Jan", sales: 4000, orders: 240 },
@@ -126,12 +127,7 @@ export function EcommerceCharts() {
                 <XAxis dataKey="month" />
                 <YAxis />
                 <ChartTooltip content={<ChartTooltipContent />} />
-                <Line
-                  type="monotone"
-                  dataKey="revenue"
-                  stroke="hsl(var(--chart-3))"
-                  strokeWidth={2}
-                />
+                <Line type="monotone" dataKey="revenue" stroke="hsl(var(--chart-3))" strokeWidth={2} />
               </LineChart>
             </ResponsiveContainer>
           </ChartContainer>

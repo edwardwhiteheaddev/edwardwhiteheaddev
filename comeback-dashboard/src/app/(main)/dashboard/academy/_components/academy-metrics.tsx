@@ -42,7 +42,7 @@ const metricsCards = [
 export function AcademyMetrics() {
   return (
     <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-      {metricsCards.map((metric, index) => {
+      {metricsCards.map((metric) => {
         const Icon = metric.icon;
         return (
           <Card key={metric.title}>

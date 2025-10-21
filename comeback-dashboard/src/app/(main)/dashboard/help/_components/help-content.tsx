@@ -1,9 +1,10 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Book, ExternalLink, FileText, MessageCircle, Settings, Users, Video } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
-import { Book, Video, FileText, Users, Settings, BarChart3, ExternalLink, MessageCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const helpSections = [
   {
@@ -57,8 +58,8 @@ export function HelpContent() {
           <Card key={section.title}>
             <CardHeader>
               <div className="flex items-center space-x-3">
-                <div className="p-2 rounded-lg bg-primary/10">
-                  <Icon className="h-6 w-6 text-primary" />
+                <div className="bg-primary/10 rounded-lg p-2">
+                  <Icon className="text-primary h-6 w-6" />
                 </div>
                 <div>
                   <CardTitle className="text-lg">{section.title}</CardTitle>
@@ -67,28 +68,29 @@ export function HelpContent() {
               </div>
             </CardHeader>
             <CardContent className="space-y-3">
-              {section.articles.map((article, index) => (
-                <div key={index} className="flex items-center justify-between p-3 rounded-lg border hover:bg-muted/50 cursor-pointer transition-colors">
+              {section.articles.map((article) => (
+                <div
+                  key={article.title}
+                  className="hover:bg-muted/50 flex cursor-pointer items-center justify-between rounded-lg border p-3 transition-colors"
+                >
                   <div className="flex-1">
-                    <h4 className="font-medium text-sm">{article.title}</h4>
-                    <div className="flex items-center space-x-2 mt-1">
+                    <h4 className="text-sm font-medium">{article.title}</h4>
+                    <div className="mt-1 flex items-center space-x-2">
                       <Badge
                         variant={
                           article.type === "guide"
                             ? "default"
                             : article.type === "tutorial"
-                            ? "secondary"
-                            : article.type === "api"
-                            ? "outline"
-                            : "destructive"
+                              ? "secondary"
+                              : article.type === "api"
+                                ? "outline"
+                                : "destructive"
                         }
                         className="text-xs"
                       >
                         {article.type}
                       </Badge>
-                      <span className="text-xs text-muted-foreground">
-                        {article.readTime} read
-                      </span>
+                      <span className="text-muted-foreground text-xs">{article.readTime} read</span>
                     </div>
                   </div>
                   <Button variant="ghost" size="sm">
@@ -108,43 +110,39 @@ export function HelpContent() {
       <Card className="md:col-span-2">
         <CardHeader>
           <CardTitle>Need More Help?</CardTitle>
-          <CardDescription>
-            Get personalized assistance from our support team
-          </CardDescription>
+          <CardDescription>Get personalized assistance from our support team</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid gap-4 md:grid-cols-3">
-            <div className="text-center space-y-2">
-              <div className="p-3 rounded-lg bg-blue-50 mx-auto w-fit">
+            <div className="space-y-2 text-center">
+              <div className="mx-auto w-fit rounded-lg bg-blue-50 p-3">
                 <MessageCircle className="h-6 w-6 text-blue-600" />
               </div>
               <h4 className="font-medium">Live Chat</h4>
-              <p className="text-sm text-muted-foreground">
-                Chat with our support team in real-time
-              </p>
+              <p className="text-muted-foreground text-sm">Chat with our support team in real-time</p>
               <Button size="sm">Start Chat</Button>
             </div>
 
-            <div className="text-center space-y-2">
-              <div className="p-3 rounded-lg bg-green-50 mx-auto w-fit">
+            <div className="space-y-2 text-center">
+              <div className="mx-auto w-fit rounded-lg bg-green-50 p-3">
                 <Book className="h-6 w-6 text-green-600" />
               </div>
               <h4 className="font-medium">Documentation</h4>
-              <p className="text-sm text-muted-foreground">
-                Browse our comprehensive knowledge base
-              </p>
-              <Button variant="outline" size="sm">View Docs</Button>
+              <p className="text-muted-foreground text-sm">Browse our comprehensive knowledge base</p>
+              <Button variant="outline" size="sm">
+                View Docs
+              </Button>
             </div>
 
-            <div className="text-center space-y-2">
-              <div className="p-3 rounded-lg bg-purple-50 mx-auto w-fit">
+            <div className="space-y-2 text-center">
+              <div className="mx-auto w-fit rounded-lg bg-purple-50 p-3">
                 <Video className="h-6 w-6 text-purple-600" />
               </div>
               <h4 className="font-medium">Video Tutorials</h4>
-              <p className="text-sm text-muted-foreground">
-                Watch step-by-step video guides
-              </p>
-              <Button variant="outline" size="sm">Watch Videos</Button>
+              <p className="text-muted-foreground text-sm">Watch step-by-step video guides</p>
+              <Button variant="outline" size="sm">
+                Watch Videos
+              </Button>
             </div>
           </div>
         </CardContent>

@@ -1,6 +1,6 @@
+import { ChatHeader } from "./_components/chat-header";
 import { ChatSidebar } from "./_components/chat-sidebar";
 import { ChatWindow } from "./_components/chat-window";
-import { ChatHeader } from "./_components/chat-header";
 
 export default function Page() {
   return (

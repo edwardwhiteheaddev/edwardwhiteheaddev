@@ -1,17 +1,11 @@
 "use client";
 
+import { ArrowUpDown } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { ArrowUpDown } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const ecommerceData = [
   {
@@ -61,9 +55,7 @@ export function EcommerceTable() {
     <Card>
       <CardHeader>
         <CardTitle>Product Performance</CardTitle>
-        <CardDescription>
-          Sales performance and inventory status for top products
-        </CardDescription>
+        <CardDescription>Sales performance and inventory status for top products</CardDescription>
       </CardHeader>
       <CardContent>
         <Table>
@@ -108,8 +100,8 @@ export function EcommerceTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {ecommerceData.map((row, index) => (
-              <TableRow key={index}>
+            {ecommerceData.map((row) => (
+              <TableRow key={row.product}>
                 <TableCell className="font-medium">{row.product}</TableCell>
                 <TableCell>{row.sku}</TableCell>
                 <TableCell>{row.sales}</TableCell>
@@ -118,11 +110,7 @@ export function EcommerceTable() {
                 <TableCell>
                   <Badge
                     variant={
-                      row.status === "In Stock"
-                        ? "default"
-                        : row.status === "Low Stock"
-                        ? "secondary"
-                        : "destructive"
+                      row.status === "In Stock" ? "default" : row.status === "Low Stock" ? "secondary" : "destructive"
                     }
                   >
                     {row.status}

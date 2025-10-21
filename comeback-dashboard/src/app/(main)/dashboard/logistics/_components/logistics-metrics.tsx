@@ -1,7 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { AlertTriangle, CheckCircle, Fuel, Route } from "lucide-react";
+
 import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Fuel, Route, AlertTriangle, CheckCircle } from "lucide-react";
 
 const metricsCards = [
   {
@@ -45,23 +46,20 @@ const metricsCards = [
 export function LogisticsMetrics() {
   return (
     <div className="space-y-4">
-      {metricsCards.map((metric, index) => {
+      {metricsCards.map((metric) => {
         const Icon = metric.icon;
         return (
-          <Card key={index}>
+          <Card key={metric.title}>
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
                 <CardTitle className="text-sm font-medium">{metric.title}</CardTitle>
-                <Icon className="h-4 w-4 text-muted-foreground" />
+                <Icon className="text-muted-foreground h-4 w-4" />
               </div>
             </CardHeader>
             <CardContent className="pt-0">
-              <div className="flex items-center justify-between mb-2">
+              <div className="mb-2 flex items-center justify-between">
                 <span className="text-2xl font-bold">{metric.value}</span>
-                <Badge
-                  variant={metric.change.startsWith('+') ? "default" : "destructive"}
-                  className="text-xs"
-                >
+                <Badge variant={metric.change.startsWith("+") ? "default" : "destructive"} className="text-xs">
                   {metric.change}
                 </Badge>
               </div>

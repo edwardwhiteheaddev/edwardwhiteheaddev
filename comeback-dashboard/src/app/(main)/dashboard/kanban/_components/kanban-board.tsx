@@ -1,10 +1,11 @@
 "use client";
 
+import { MessageSquare, Paperclip, Plus } from "lucide-react";
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Plus, MessageSquare, Paperclip, Calendar, User } from "lucide-react";
 
 const columns = [
   {
@@ -131,31 +132,29 @@ const columns = [
 
 export function KanbanBoard() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
       {columns.map((column) => (
         <Card key={column.id} className="h-fit">
           <CardHeader className="pb-3">
             <div className="flex items-center justify-between">
-              <CardTitle className="text-sm font-medium">
-                {column.title}
-              </CardTitle>
+              <CardTitle className="text-sm font-medium">{column.title}</CardTitle>
               <Badge variant="secondary">{column.count}</Badge>
             </div>
           </CardHeader>
           <CardContent className="space-y-3">
             {column.tasks.map((task) => (
-              <Card key={task.id} className="cursor-pointer hover:shadow-md transition-shadow">
+              <Card key={task.id} className="cursor-pointer transition-shadow hover:shadow-md">
                 <CardContent className="p-4">
                   <div className="space-y-3">
                     <div className="flex items-start justify-between">
-                      <h4 className="font-medium text-sm">{task.title}</h4>
+                      <h4 className="text-sm font-medium">{task.title}</h4>
                       <Badge
                         variant={
                           task.priority === "high"
                             ? "destructive"
                             : task.priority === "medium"
-                            ? "default"
-                            : "secondary"
+                              ? "default"
+                              : "secondary"
                         }
                         className="text-xs"
                       >
@@ -163,24 +162,23 @@ export function KanbanBoard() {
                       </Badge>
                     </div>
 
-                    <p className="text-xs text-muted-foreground line-clamp-2">
-                      {task.description}
-                    </p>
+                    <p className="text-muted-foreground line-clamp-2 text-xs">{task.description}</p>
 
                     <div className="flex items-center justify-between">
                       <div className="flex items-center space-x-2">
                         <Avatar className="h-6 w-6">
                           <AvatarImage src={task.avatar} />
                           <AvatarFallback className="text-xs">
-                            {task.assignee.split(" ").map(n => n[0]).join("")}
+                            {task.assignee
+                              .split(" ")
+                              .map((n) => n[0])
+                              .join("")}
                           </AvatarFallback>
                         </Avatar>
-                        <span className="text-xs text-muted-foreground">
-                          {task.assignee}
-                        </span>
+                        <span className="text-muted-foreground text-xs">{task.assignee}</span>
                       </div>
 
-                      <div className="flex items-center space-x-1 text-muted-foreground">
+                      <div className="text-muted-foreground flex items-center space-x-1">
                         {task.comments > 0 && (
                           <div className="flex items-center space-x-1">
                             <MessageSquare className="h-3 w-3" />
@@ -210,7 +208,7 @@ export function KanbanBoard() {
               </Card>
             ))}
 
-            <Button variant="ghost" className="w-full justify-start text-muted-foreground">
+            <Button variant="ghost" className="text-muted-foreground w-full justify-start">
               <Plus className="mr-2 h-4 w-4" />
               Add Task
             </Button>

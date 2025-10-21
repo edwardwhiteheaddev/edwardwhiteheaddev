@@ -1,6 +1,7 @@
+import { Plus, Search, Settings } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Search, Settings, Plus } from "lucide-react";
 
 export function ChatHeader() {
   return (
@@ -12,11 +13,8 @@ export function ChatHeader() {
 
       <div className="flex items-center space-x-2">
         <div className="relative">
-          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
-          <Input
-            placeholder="Search conversations..."
-            className="w-64 pl-10"
-          />
+          <Search className="text-muted-foreground absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2" />
+          <Input placeholder="Search conversations..." className="w-64 pl-10" />
         </div>
         <Button variant="outline" size="sm">
           <Settings className="h-4 w-4" />
