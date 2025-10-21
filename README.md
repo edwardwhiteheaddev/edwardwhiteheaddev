@@ -16,7 +16,7 @@ I build future-focused, open-source projects that blend **AI**, **automation**, 
 | Frontend             | React 19 · Next.js 15 · TypeScript · Mantine UI · Tailwind · Zustand                                     |
 | Backend              | Node.js · FastAPI · MongoDB · Firebase · NextAuth                                                        |
 | AI & Automation      | n8n · Ollama · Gemini · Multi-Agent Orchestration                                        |
-| DevOps & Infra       | Docker · GitHub Actions · Firebase Hosting · Vercel · Terraform                                        |
+| DevOps & Infra       | Docker · GitHub Actions · Firebase Hosting · Vercel                                        |
 | Mobile & IoT         | React Native · Flutter · .NET MAUI · MQTT · Zigbee/Z-Wave · Robotics Integration                        |
 
 ### 🚀 Some Tools I Have Used and Learned
