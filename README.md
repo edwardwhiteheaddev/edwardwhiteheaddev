@@ -1,4 +1,4 @@
-![Edward Whitehead Dev Works](https://github.com/edwardwhiteheaddev/edwardwhitehead.github.io/blob/main/public/assets/images/og-image.png?raw=true "Edward Whitehead Dev Works")
+[![Edward Whitehead Dev Works](https://github.com/edwardwhiteheaddev/edwardwhitehead.github.io/blob/main/public/assets/images/og-image.png?raw=true "Edward Whitehead Dev Works")](https://edwardwhitehead.dev)
 
 # 👋 Hi, I'm Edward Whitehead
 
@@ -123,7 +123,7 @@ Local-first automation engine with support for Zigbee, Z-Wave, MQTT, Matter & mo
 
 If you like my projects or want to support open-source development:
 
-☕ [Buy Me a Coffee](https://www.buymeacoffee.com/edwardwhiteheaddev)
+[!["Buy Me A Coffee"](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/edwardwhiteheaddev)
 
 ---
 
