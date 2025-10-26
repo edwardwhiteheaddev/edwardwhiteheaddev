@@ -1,0 +1,11 @@
+.env
+.next
+node_modules
+
+comeback-cms/node_modules
+comeback-cms/.next
+comeback-cms/.env
+
+comeback-dashboard/node_modules
+comeback-dashboard/.next
+comeback-dashboard/.env
