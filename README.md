@@ -11,13 +11,13 @@ I build future-focused, open-source projects that blend **AI**, **automation**, 
 
 ## 🛠️ Tech Stack & Specialties
 
-| Category            | Tools & Frameworks                                                                                     |
+| Category             | Tools & Frameworks                                                                                       |  
 |----------------------|----------------------------------------------------------------------------------------------------------|
 | Frontend             | React 19 · Next.js 15 · TypeScript · Mantine UI · Tailwind · Zustand                                     |
 | Backend              | Node.js · FastAPI · MongoDB · Firebase · NextAuth                                                        |
-| AI & Automation      | n8n · Ollama · Gemini · Multi-Agent Orchestration                                        |
-| DevOps & Infra       | Docker · GitHub Actions · Firebase Hosting · Vercel                                        |
-| Mobile & IoT         | React Native · Flutter · .NET MAUI · MQTT · Zigbee/Z-Wave · Robotics Integration                        |
+| AI & Automation      | OpenCode · OpenRouter · Ollama · Gemini · Multi-Agent Orchestration                                      |
+| DevOps & Infra       | Docker · GitHub Actions · Firebase Hosting · Vercel                                                      |
+| Mobile & IoT         | React Native · Flutter · .NET MAUI · MQTT · Zigbee/Z-Wave · Robotics Integration                         |
 
 ### 🚀 Some Tools I Have Used and Learned
 <p align="left">
@@ -45,11 +45,11 @@ I build future-focused, open-source projects that blend **AI**, **automation**, 
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="bash" width="25" height="25"/> 
 </p>
 
-***The have used dozens of tools and technologies over the course of my career.***
+***I have used dozens of tools and technologies over the course of my career.***
 
 ---
 
-## 🧠 Flagship Projects
+## 🧠 Open-source Projects
 
 ### 🟢 [Violt Core](https://github.com/violt-app/violt-core)
 > 🏡 **Open-source, privacy-first smart home automation platform**  
@@ -86,7 +86,7 @@ Local-first automation engine with support for Zigbee, Z-Wave, MQTT, Matter & mo
 - 🧠 20+ years of professional software engineering experience  
 - 🏗️ Built multiple end-to-end SaaS platforms from scratch  
 - 🌍 Remote-first builder, open-source advocate, and digital nomad  
-- 🤝 Passionate about building AI tools that empower individuals & teams
+- 🤝 Passionate about building tools that empower individuals & teams
 
 ---
 
